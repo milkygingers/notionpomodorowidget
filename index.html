@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            color: #FFA500;
+        }
+
+        .timer {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #FFA500;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffbb33;
+        }
+
+        button:active {
+            background-color: #cc8400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div class="timer" id="timer">25:00</div>
+    <div class="buttons">
+        <button onclick="startTimer(25)">Start 25-min Timer</button>
+        <button onclick="startTimer(5)">Short Break (5 min)</button>
+        <button onclick="startTimer(10)">Long Break (10 min)</button>
+    </div>
+
+    <script>
+        let timerInterval;
+
+        function startTimer(minutes) {
+            clearInterval(timerInterval);
+            const timerDisplay = document.getElementById('timer');
+            let timeRemaining = minutes * 60;
+
+            function updateTimer() {
+                const mins = Math.floor(timeRemaining / 60);
+                const secs = timeRemaining % 60;
+                timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up!');
+                }
+                timeRemaining--;
+            }
+
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+    </script>
+</body>
+</html>
