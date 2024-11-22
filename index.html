@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro Timer</title>
+    <title>Halloween Pomodoro Timer</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <style>
         body {
@@ -19,8 +19,12 @@
         }
 
         .container {
-            width: 400px;
+            width: 220px;
             text-align: center;
+            background-color: #000000;
+            border-radius: 15px; /* Rounded corners for the container */
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
@@ -44,7 +48,7 @@
             background-color: #9d68d3;
             color: #000000;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px; /* Rounded corners for buttons */
             padding: 5px 10px;
             font-size: 0.8rem;
             cursor: pointer;
@@ -63,7 +67,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎃Pomodoro Timer🎃</h1>
+        <h1>🎃 Pomodoro Timer 🎃</h1>
         <div class="timer" id="timer">25:00</div>
         <div class="buttons">
             <button onclick="startTimer(25)">Work (25)</button>
