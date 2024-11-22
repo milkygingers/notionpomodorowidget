@@ -12,51 +12,65 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 100%;
             margin: 0;
             background-color: #000000;
-            color: #FFA500;
+            color: #9d68d3;
+        }
+
+        .container {
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
         }
 
         .timer {
-            font-size: 4rem;
-            margin: 20px 0;
+            font-size: 2rem;
+            margin: 10px 0;
         }
 
         .buttons {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
         }
 
         button {
-            background-color: #FFA500;
+            background-color: #9d68d3;
             color: #000000;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 1rem;
+            padding: 5px 10px;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: background-color 0.3s;
             font-family: 'Creepster', cursive;
         }
 
         button:hover {
-            background-color: #ffbb33;
+            background-color: #b883e0;
         }
 
         button:active {
-            background-color: #cc8400;
+            background-color: #7d4fb0;
         }
     </style>
 </head>
 <body>
-    <h1>🎃 Pomodoro Timer 🎃</h1>
-    <div class="timer" id="timer">25:00</div>
-    <div class="buttons">
-        <button onclick="startTimer(25)">Start 25-min Timer</button>
-        <button onclick="startTimer(5)">Short Break (5 min)</button>
-        <button onclick="startTimer(10)">Long Break (10 min)</button>
-        <button onclick="stopTimer()">Stop</button>
+    <div class="container">
+        <h1>🎃Pomodoro Timer🎃</h1>
+        <div class="timer" id="timer">25:00</div>
+        <div class="buttons">
+            <button onclick="startTimer(25)">Work (25)</button>
+            <button onclick="startTimer(5)">Short (5)</button>
+            <button onclick="startTimer(10)">Long (10)</button>
+            <button onclick="stopTimer()">Stop</button>
+        </div>
     </div>
 
     <script>
@@ -89,5 +103,6 @@
     </script>
 </body>
 </html>
+
 
 
