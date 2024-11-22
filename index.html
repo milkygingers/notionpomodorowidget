@@ -24,8 +24,8 @@
             background-color: #000000;
             border-radius: 15px; /* Rounded corners for the container */
             padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             border: 2px solid #9d68d3; /* Purple border */
+            box-shadow: 0 0 15px #9d68d3, 0 4px 8px rgba(0, 0, 0, 0.5); /* Glow effect for container */
         }
 
         h1 {
@@ -46,23 +46,26 @@
         }
 
         button {
-            background-color: #9d68d3;
-            color: #000000;
-            border: none;
-            border-radius: 10px; /* Rounded corners for buttons */
-            padding: 5px 10px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-family: 'Creepster', cursive;
-        }
+    background-color: #9d68d3;
+    color: #ffffff; /* Set text color to white */
+    border: none;
+    border-radius: 10px; /* Rounded corners for buttons */
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: 'Creepster', cursive;
+    box-shadow: 0 0 10px #9d68d3; /* Initial glow effect for buttons */
+}
 
         button:hover {
             background-color: #b883e0;
+            box-shadow: 0 0 15px #b883e0; /* Enhanced glow on hover */
         }
 
         button:active {
             background-color: #7d4fb0;
+            box-shadow: 0 0 10px #7d4fb0; /* Subtle glow when clicked */
         }
     </style>
 </head>
